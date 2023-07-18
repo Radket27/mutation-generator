@@ -1,6 +1,6 @@
 def mutation_generator(gen):
     """
-    mutation generator
+    Substitution mutation generator
     """
     from random import randint
     a1 = randint(0,3)
@@ -29,18 +29,18 @@ def math(new):
         back = True
     return back
 
-def generator_genome(length):
+def generator_nucleotides(length):
     return 'A' * length
 
 def main():
-    mutation1 = int(input("Probability of random mutations (0-99)\n:"))
-    length = int(input("Length of genome (int)\n:"))
-    time = int(input("Generations (int)\n:"))
-    genome = generator_genome(length)
+    mutation1 = int(input("Probability of random substitution mutations (0-99)\n: "))
+    length = int(input("Length of nucleotide sequence (int)\n: "))
+    time = int(input("Generations (int)\n: "))
+    genome = generator_nucleotides(length)
     for x in range(time):
         if(math(mutation1)):
             genome = mutation_generator(genome)
-            print(f"generation {x}")
+            print(f"Generation {x}")
             print(genome)
 
 if(__name__ == "__main__"):
